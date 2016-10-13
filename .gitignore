@@ -1,0 +1,15 @@
+# snapcraft
+parts/desktop-gtk2
+parts/electronic-wechat
+parts/wechat-copy
+stage
+prime
+*.snap
+
+# vim
+.*.swp
+
+# python
+__pycache__
+*.pyc
+.ropeproject
