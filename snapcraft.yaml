@@ -5,8 +5,8 @@ description: |
   Electronic WeChat is a unoffical WeChat client. A better WeChat on
   macOS and Linux. Built with Electron.
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
 
 apps:
   electronic-wechat:
@@ -23,8 +23,13 @@ apps:
 
 parts:
   electronic-wechat:
-    plugin: electronic-wechat
-    source: https://github.com/geeeeeeeeek/electronic-wechat/archive/v1.4.0.tar.gz
+    plugin: nodejs
+    source-type: git
+    source: https://github.com/geeeeeeeeek/electronic-wechat/
+    source-branch: production
+    npm-run:
+      - build:linux
+    install: cp -r dist $SNAPCRAFT_PART_INSTALL
     stage-packages:
       - libnss3
       - fontconfig-config
@@ -39,9 +44,10 @@ parts:
       no-easy-install-files:
         - -usr/sbin/update-icon-caches
         - -README.md
+        - -LICENSE
     stage:
       - $no-easy-install-files
-    snap:
+    prime:
       - $no-easy-install-files
 
   wechat-copy:
