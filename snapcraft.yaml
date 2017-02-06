@@ -40,6 +40,7 @@ parts:
       - overlay-scrollbar-gtk2
       - libatk-adaptor
       - libcanberra-gtk-module
+      - libappindicator1
     filesets:
       no-easy-install-files:
         - -usr/sbin/update-icon-caches
