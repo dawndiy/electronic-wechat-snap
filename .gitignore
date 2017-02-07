@@ -1,7 +1,5 @@
 # snapcraft
-parts/desktop-gtk2
-parts/electronic-wechat
-parts/wechat-copy
+parts
 stage
 prime
 *.snap

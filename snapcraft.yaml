@@ -15,11 +15,12 @@ apps:
       - unity7
       - opengl
       - network
-      - pulseaudio
       - home
       - browser-support
       - gsettings
       - x11
+      - alsa
+      - pulseaudio
 
 parts:
   electronic-wechat:
@@ -41,6 +42,11 @@ parts:
       - libatk-adaptor
       - libcanberra-gtk-module
       - libappindicator1
+      - libnotify4
+      - libdbusmenu-glib4
+      - libunity9
+      - libgconf-2-4
+      - libxss1
     filesets:
       no-easy-install-files:
         - -usr/sbin/update-icon-caches
