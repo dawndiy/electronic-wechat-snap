@@ -10,5 +10,5 @@ Working features:
 
 Known issues:
  - ~~Needs devmode for using input method based on Fcitx~~
- - App indicator does not show icon on system tray
+ - ~~App indicator does not show icon on system tray~~(Indicator works with none icon)
  - Can't play any sound
