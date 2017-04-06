@@ -1,5 +1,5 @@
 name: electronic-wechat
-version: '1.4.0'
+version: '2.0'
 summary: A better WeChat on macOS and Linux. Built with Electron.
 description: |
   Electronic WeChat is a unoffical WeChat client. A better WeChat on
@@ -19,7 +19,6 @@ apps:
       - browser-support
       - gsettings
       - x11
-      - alsa
       - pulseaudio
 
 parts:
@@ -44,7 +43,6 @@ parts:
       - libappindicator1
       - libnotify4
       - libdbusmenu-glib4
-      - libunity9
       - libgconf-2-4
       - libxss1
     filesets:
@@ -60,8 +58,8 @@ parts:
   wechat-copy:
     plugin: dump
     source: .
-    filesets:
-      wechat.wrapper: wechat.wrapper
+    stage:
+      - wechat.wrapper
     after: 
       - electronic-wechat
       - desktop-gtk2
