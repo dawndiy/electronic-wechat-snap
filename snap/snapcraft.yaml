@@ -20,6 +20,7 @@ apps:
       - gsettings
       - x11
       - pulseaudio
+      - alsa
 
 parts:
   electronic-wechat:
@@ -35,7 +36,6 @@ parts:
       - fontconfig-config
       - gnome-themes-standard
       - fonts-wqy-microhei
-      - libasound2-data
       - fcitx-frontend-gtk2
       - overlay-scrollbar-gtk2
       - libatk-adaptor
@@ -45,6 +45,15 @@ parts:
       - libdbusmenu-glib4
       - libgconf-2-4
       - libxss1
+      - gstreamer1.0-plugins-bad
+      - gstreamer1.0-plugins-ugly
+      - gstreamer1.0-plugins-good
+      - gstreamer1.0-plugins-bad-videoparsers
+      - gstreamer1.0-plugins-bad-faad
+      - libasound2
+      - libasound2-data
+      - libsoundtouch1
+      - alsa-utils
     filesets:
       no-easy-install-files:
         - -usr/sbin/update-icon-caches
@@ -55,6 +64,10 @@ parts:
     prime:
       - $no-easy-install-files
 
+  file-copy:
+    plugin: dump
+    source: snap/files/
+
   wechat-copy:
     plugin: dump
     source: .
@@ -63,3 +76,4 @@ parts:
     after: 
       - electronic-wechat
       - desktop-gtk2
+      - file-copy
